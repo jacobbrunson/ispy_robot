@@ -87,7 +87,7 @@ def find_objects():
 	images = record_video(camera, motion)
 
 	fourcc = cv2.cv.CV_FOURCC('M','J','P','G')
-	out_video = cv2.VideoWriter('output.avi',fourcc, 20.0, (640, 480))
+	out_video = cv2.VideoWriter('/home/nao/output.avi', fourcc, 20.0, (640, 480))
 
 	objects = []
 	old_objects = []
@@ -99,7 +99,7 @@ def find_objects():
 		frame = np.reshape(np.frombuffer(nao_image[6], dtype='%iuint8' % nao_image[2]), (nao_image[1], nao_image[0], nao_image[2]))
 
 		video_frame = frame.copy()
-		cv2.putText(video_frame, angle, (20, 460), cv2.FONT_HERSHEY_SIMPLEX, 2, (255, 255, 255))
+		cv2.putText(video_frame, str(angle), (20, 460), cv2.FONT_HERSHEY_SIMPLEX, 2, (255, 255, 255))
 		out_video.write(video_frame)
 
 		old_found = []
