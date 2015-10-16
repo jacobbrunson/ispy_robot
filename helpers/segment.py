@@ -86,6 +86,8 @@ def find_objects():
 
 	images = record_video(camera, motion)
 
+	fourcc = cv2.VideoWriter_fourcc(*'XVID')
+	out_video = cv2.VideoWriter('output.avi',fourcc, 20.0, (640, 480))
 
 	objects = []
 	old_objects = []
@@ -95,6 +97,11 @@ def find_objects():
 		angle = pair[1]
 		# Convert NAO Format to OpenCV format
 		frame = np.reshape(np.frombuffer(nao_image[6], dtype='%iuint8' % nao_image[2]), (nao_image[1], nao_image[0], nao_image[2]))
+
+		video_frame = frame.copy()
+		cv2.putText(video_frame, angle, (20, 460), cv2.FONT_HERSHEY_SIMPLEX, 2, (255, 255, 255))
+		out_video.write(video_frame)
+
 		old_found = []
 		new_contours = []
 
@@ -139,5 +146,5 @@ def find_objects():
 			new_objects.append(obj)
 
 		old_objects = new_objects
-
+	out_video.release()
 	return objects
