@@ -3,7 +3,7 @@
 This code allows a NAO robot to inspect the area in front of it, segment each object from the background, and keep track of the position of the object in space. The code also saves images of each object as it moves across the robot's field of vision.
 
 ## Demo
-
+Click the link or video below to watch the demo. The robot looks around and points to each object, naming its color.
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=wSN6pFF994I
 " target="_blank"><img src="http://img.youtube.com/vi/wSN6pFF994I/0.jpg" 
 alt="Robot Demo" width="480" height="360" border="10" /></a>
