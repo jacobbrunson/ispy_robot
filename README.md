@@ -1,4 +1,16 @@
-#ispy_robot
+# ispy_robot
+
+This code allows a NAO robot to inspect the area in front of it, segment each object from the background, and keep track of the position of the object in space. The code also saves images of each object as it moves across the robot's field of vision.
+
+## Demo
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=wSN6pFF994I
+" target="_blank"><img src="http://img.youtube.com/vi/wSN6pFF994I/0.jpg" 
+alt="Robot Demo" width="480" height="360" border="10" /></a>
+
+https://www.youtube.com/watch?v=wSN6pFF994I
+
+## About
 
 This is a collection of modules for NAO robots that are required for the iSpy game in the HiLT lab. More info: https://github.com/iamadamhair/ispy_python
 
